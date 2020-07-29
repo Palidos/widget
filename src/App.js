@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Widget,
   addResponseMessage,
@@ -6,16 +6,33 @@ import {
 } from 'react-chat-widget';
 
 import './widgetStylesOverride.css';
-import './widget.css';
 import 'react-chat-widget/lib/styles.css';
 
 import WomanEmoji from 'assets/womanEmoji.svg';
 import CustomLauncher from 'components/CustomLauncher';
+import Header from 'components/Header';
+import HelloPage from 'components/HelloPage';
 import TodayPanel from 'components/TodayPanel';
 
 function App() {
+  const [helloPage, setHelloPage] = useState(true);
   const handleNewUserMessage = newMessage => {
     addResponseMessage(`${newMessage}`);
+  };
+
+  // const handleClick = () => {
+  //   document.documentElement.style.setProperty('--header-height', '470px');
+  //   document.documentElement.style.setProperty('--main-body-height', '0px');
+  //   document.documentElement.style.setProperty('--main-body-padding-top', '0px');
+  // };
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      document.documentElement.style.setProperty('--header-height', '50px');
+      document.documentElement.style.setProperty('--main-body-height', '420px');
+      document.documentElement.style.setProperty('--main-body-padding-top', '10px');
+      setHelloPage(false);
+    }
   };
 
   useEffect(() => {
@@ -24,20 +41,15 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <div
+      className='App'
+      onKeyDown={handleKeyDown}
+    >
       <Widget
         handleNewUserMessage={handleNewUserMessage}
         launcher={handleToggle => CustomLauncher(handleToggle)}
-        titleAvatar={WomanEmoji}
-        title={(
-          <div className={'header__text'}>
-            <div className={'header__bot'}>{'Бот'}</div>
-            <div className={'header__status'}>
-              <span className={'header__circle'}></span>
-              <span className={'header__online'}>{'Онлайн'}</span>
-            </div>
-          </div>
-        )}
+        titleAvatar={!helloPage && WomanEmoji}
+        title={helloPage ? <HelloPage setHelloPage={setHelloPage} /> : <Header />}
         subtitle={''}
         senderPlaceHolder={'Напишите нам'}
       />

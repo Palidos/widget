@@ -1,8 +1,15 @@
+:root {
+  --header-height: 470px;
+  --main-body-height: 0px;
+  --main-body-padding-top: 0px;
+}
+
 .rcw-header {
-  background: linear-gradient(135deg, #2e408d 0%, #79c6e9 63.65%);
+  background: linear-gradient(124.19deg, #2E408D 0%, #79C6E9 100%);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
   padding: 15px 19px 17px 19px !important;
+  height: var(--header-height);
 }
 
 .rcw-conversation-container .avatar {
@@ -14,6 +21,13 @@
 .rcw-title {
   display: flex;
   padding: 0px !important;
+
+  height: 100%;
+}
+
+.rcw-messages-container{
+  height:var(--main-body-height) !important ;
+  padding-top: var(--main-body-padding-top) !important;
 }
 
 .rcw-messages-container::-webkit-scrollbar {
@@ -103,6 +117,7 @@ input.rcw-new-message::placeholder {
 
 .rcw-send {
   background: #ffffff !important;
+  outline: none;
 }
 
 .rcw-send img {
