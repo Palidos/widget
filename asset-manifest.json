@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/widget/static/css/main.389c8322.chunk.css",
+    "main.js": "/widget/static/js/main.6c18c698.chunk.js",
+    "main.js.map": "/widget/static/js/main.6c18c698.chunk.js.map",
+    "runtime-main.js": "/widget/static/js/runtime-main.23ae560a.js",
+    "runtime-main.js.map": "/widget/static/js/runtime-main.23ae560a.js.map",
+    "static/css/2.29c4d543.chunk.css": "/widget/static/css/2.29c4d543.chunk.css",
+    "static/js/2.d0ca9e85.chunk.js": "/widget/static/js/2.d0ca9e85.chunk.js",
+    "static/js/2.d0ca9e85.chunk.js.map": "/widget/static/js/2.d0ca9e85.chunk.js.map",
+    "index.html": "/widget/index.html",
+    "precache-manifest.ec95942859d181620c6039dd25e280e5.js": "/widget/precache-manifest.ec95942859d181620c6039dd25e280e5.js",
+    "service-worker.js": "/widget/service-worker.js",
+    "static/css/2.29c4d543.chunk.css.map": "/widget/static/css/2.29c4d543.chunk.css.map",
+    "static/css/main.389c8322.chunk.css.map": "/widget/static/css/main.389c8322.chunk.css.map",
+    "static/js/2.d0ca9e85.chunk.js.LICENSE.txt": "/widget/static/js/2.d0ca9e85.chunk.js.LICENSE.txt",
+    "static/media/widgetStylesOverride.css": "/widget/static/media/sendIcon.ee41f8ff.svg",
+    "static/media/womanEmoji.svg": "/widget/static/media/womanEmoji.f3f4fa3f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23ae560a.js",
+    "static/css/2.29c4d543.chunk.css",
+    "static/js/2.d0ca9e85.chunk.js",
+    "static/css/main.389c8322.chunk.css",
+    "static/js/main.6c18c698.chunk.js"
+  ]
+}
