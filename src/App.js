@@ -16,28 +16,27 @@ import TodayPanel from 'components/TodayPanel';
 
 function App() {
   const [helloPage, setHelloPage] = useState(true);
+
   const handleNewUserMessage = newMessage => {
-    addResponseMessage(`${newMessage}`);
+    addResponseMessage(newMessage);
   };
 
-  // const handleClick = () => {
-  //   document.documentElement.style.setProperty('--header-height', '470px');
-  //   document.documentElement.style.setProperty('--main-body-height', '0px');
-  //   document.documentElement.style.setProperty('--main-body-padding-top', '0px');
-  // };
+  const proceedToChat = () => {
+    document.documentElement.style.setProperty('--header-height', '50px');
+    document.documentElement.style.setProperty('--main-body-height', '420px');
+    document.documentElement.style.setProperty('--main-body-padding-top', '10px');
+    setHelloPage(false);
+  };
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
-      document.documentElement.style.setProperty('--header-height', '50px');
-      document.documentElement.style.setProperty('--main-body-height', '420px');
-      document.documentElement.style.setProperty('--main-body-padding-top', '10px');
-      setHelloPage(false);
+      proceedToChat();
     }
   };
 
   useEffect(() => {
     renderCustomComponent(TodayPanel);
-    addResponseMessage(`Вы сможете принять наш пробник в понедельник утром?`);
+    addResponseMessage('Вы сможете принять наш пробник в понедельник утром?');
   }, []);
 
   return (
@@ -49,9 +48,11 @@ function App() {
         handleNewUserMessage={handleNewUserMessage}
         launcher={handleToggle => CustomLauncher(handleToggle)}
         titleAvatar={!helloPage && WomanEmoji}
-        title={helloPage ? <HelloPage setHelloPage={setHelloPage} /> : <Header />}
-        subtitle={''}
-        senderPlaceHolder={'Напишите нам'}
+        title={helloPage
+          ? <HelloPage proceedToChat={proceedToChat} />
+          : <Header />}
+        subtitle=''
+        senderPlaceHolder='Напишите нам'
       />
     </div>
   );

@@ -15,18 +15,18 @@ export default function CustomLauncher(handleToggle) {
   return (
     <>
       <button
+        className='launcher__button'
         type='button'
         onClick={() => {
           handleToggle();
           saveDate();
           setIsOpen(prevState => !prevState);
         }}
-        className={'launcher__button'}
       >
         {!isOpen && <span className='launcher__tooltip'>{'Подписаться на новости!'}</span>}
         {isOpen
-          ? <CrossIcon className={'launcher__icon'} />
-          : <MessageBubbleIcon className={'launcher__icon'} />}
+          ? <CrossIcon className='launcher__icon' />
+          : <MessageBubbleIcon className='launcher__icon' />}
       </button>
     </>
   );
